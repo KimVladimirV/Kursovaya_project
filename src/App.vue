@@ -20,7 +20,7 @@ import Footer from '@/components/Footer.vue'
 <style>
 /* Глобальные стили */
 body {
-  background-color: #f8f5f2; /* Теплый кремовый фон как в оригинале */
+  background-color: #f8f5f2; 
   margin: 0;
   padding: 0;
 }
