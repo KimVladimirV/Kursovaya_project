@@ -45,8 +45,7 @@ export default {
       // Вариант для Vite
       return new URL(`../assets/images/${imageName}`, import.meta.url).href
       
-      // Альтернативный вариант (если выше не работает):
-      // return `/src/assets/images/${imageName}`
+    
     }
   }
 }
