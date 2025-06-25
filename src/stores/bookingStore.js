@@ -1,10 +1,10 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
-export const useBookingStore = defineStore('booking', () => {
-  const bookings = ref([])
-  const loading = ref(false)
-  const error = ref(null)
+export const useBookingStore = defineStore('booking', () => {// Создаем хранилище
+  const bookings = ref([]) // bookings - массив для хранения всех бронирований
+  const loading = ref(false)// loading - флаг загрузки
+  const error = ref(null)// error - для хранения ошибок
 
   const createBooking = async (bookingData) => {
     loading.value = true
@@ -15,10 +15,10 @@ export const useBookingStore = defineStore('booking', () => {
       await new Promise(resolve => setTimeout(resolve, 1500))
       
       const newBooking = {
-        id: Date.now(),
+        id: Date.now(),// уникальный ID на основе текущего времени
         ...bookingData,
-        createdAt: new Date().toISOString(),
-        status: 'pending'
+        createdAt: new Date().toISOString(),// дата создания в стрчном  формате
+        status: 'pending'// начальный статус бронирования
       }
       
       bookings.value.push(newBooking)
@@ -34,6 +34,7 @@ export const useBookingStore = defineStore('booking', () => {
   return {
     bookings,
     loading,
+    //ref(реактивные переменные) автоматически обновляют интерфейс при изменении их значений
     error,
     createBooking
   }
